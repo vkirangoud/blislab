@@ -16,8 +16,8 @@ FRAME_CPP_SRC= \
 
 KERNEL_SRC=    \
 							 kernels/bl_dgemm_int_8x4.c \
-			                 kernels/bl_dgemm_asm_12x4.c \
-			                 kernels/bl_dgemm_asm_8x6.c \
+			                 		 kernels/bl_dgemm_asm_12x4.c \
+			                 		 kernels/bl_dgemm_asm_8x6.c \
 							 kernels/bl_dgemm_ukr.c \
 							 kernels/bl_dgemm_asm_8x4.c \
 
@@ -30,7 +30,7 @@ BLISLAB_OBJ=$(FRAME_CC_SRC:.c=.o) $(FRAME_CPP_SRC:.cpp=.o) $(KERNEL_SRC:.c=.o) $
 all: $(LIBBLISLAB) $(SHAREDLIBBLISLAB) TESTBLISLAB
 
 TESTBLISLAB: $(LIBBLISLAB)
-	cd $(BLISLAB_DIR)/test && $(MAKE) && cd $(BLISLAB_DIR) $(LDFLAGS)
+	cd $(BLISLAB_DIR)/test && $(MAKE)  $(LDFLAGS) && cd $(BLISLAB_DIR) 
 
 $(LIBBLISLAB): $(BLISLAB_OBJ)
 	$(ARCH) $(ARCHFLAGS) $@ $(BLISLAB_OBJ)
