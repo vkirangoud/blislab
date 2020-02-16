@@ -7,8 +7,12 @@ include $(BLISLAB_DIR)/make.inc.files/make.gnu.inc
 endif
 
 
-BLISLAB_TEST_CC_SRC= \
+#BLISLAB_TEST_CC_SRC= \
 									 test_bl_dgemm.c \
+
+BLISLAB_TEST_CC_SRC= \
+									 test_aocl_dgemm.c \
+
 
 BLISLAB_TEST_CPP_SRC=\
 
